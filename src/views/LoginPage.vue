@@ -28,40 +28,40 @@
 </template>
 
 <script>
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
 
 export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-      errMessage: '',
-    }
-  }, 
-  methods: {
-    signIn() {
-    const auth = getAuth()
-    signInWithEmailAndPassword(auth, this.email, this.password)
-        .then(() => {
-            console.log("Successfully")
-            this.$router.push('/profile')
-        })
-        .catch((err) => {
-            console.log(err.code)
-            switch(err.code) {
-              case "auth/invalid-email":
-                this.errMessage = "The username or password you entered is incorrect"
-                break;
+	data() {
+		return {
+			email: '',
+			password: '',
+			errMessage: '',
+		};
+	},
+	methods: {
+		signIn() {
+			const auth = getAuth();
+			signInWithEmailAndPassword(auth, this.email, this.password)
+				.then(() => {
+					console.log('Successfully');
+					this.$router.push('/profile');
+				})
+				.catch(err => {
+					console.log(err.code);
+					switch (err.code) {
+						case 'auth/invalid-email':
+							this.errMessage = 'The username or password you entered is incorrect';
+							break;
 
-              case "auth/wrong-password":
-                break;
-                default:
-                this.errMessage = "The username or password you entered is incorrect"
-            }
-        })
-}
-  }
-}
+						case 'auth/wrong-password':
+							break;
+						default:
+							this.errMessage = 'The username or password you entered is incorrect';
+					}
+				});
+		},
+	},
+};
 
 </script>
 
@@ -111,7 +111,7 @@ h1, h2, p {
           text-align: left;
           margin-bottom: 9px;
         }
-      } 
+      }
       .register_text {
         text-align: left;
         .register_welcome {

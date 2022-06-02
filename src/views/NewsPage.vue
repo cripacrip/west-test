@@ -17,19 +17,19 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import {mapGetters, mapActions} from 'vuex';
 export default {
-    name: 'NewsPage',
-    computed: {
-        ...mapGetters(['allNews']),
-    },
-    mounted() {
-        this.getAllNews()
-    },
-    methods: {
-        ...mapActions(['getAllNews'])
-    }
-}
+	name: 'NewsPage',
+	computed: {
+		...mapGetters(['allNews']),
+	},
+	mounted() {
+		this.getAllNews();
+	},
+	methods: {
+		...mapActions(['getAllNews']),
+	},
+};
 </script>
 
 <style lang="scss" scoped>

@@ -8,25 +8,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useRouter } from 'vue-router'
+import {ref} from 'vue';
+import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import {useRouter} from 'vue-router';
 
-const email = ref("")
-const password = ref("")
-const router = useRouter()
+const email = ref('');
+const password = ref('');
+const router = useRouter();
 
 const signIn = () => {
-    const auth = getAuth()
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-        .then(() => {
-            console.log("Successfully")
-            router.push('/profile')
-        })
-        .catch((err) => {
-            console.log(err.code),
-            console.log(err.message)
-        })
-}
+	const auth = getAuth();
+	createUserWithEmailAndPassword(auth, email.value, password.value)
+		.then(() => {
+			console.log('Successfully');
+			router.push('/profile');
+		})
+		.catch(err => {
+			console.log(err.code);
+			console.log(err.message);
+		});
+};
 
 </script>

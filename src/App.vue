@@ -17,34 +17,34 @@
 </template>
 
 <script>
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 
 export default {
-  name: 'HomePage',
-  data() {
-    return {
-      isLogin: false,
-      auth: '',
-    }
-  },
-    mounted() {
-      this.auth = getAuth()
-      onAuthStateChanged(this.auth, (user) => {
-        if(user) {
-          this.isLogin = true;
-        } else {
-          this.isLogin = false;
-        }
-      })
-    },
-    methods: {
-      logOut() {
-        signOut(this.auth).then(() => {
-        this.$router.push('/')
-      })
-    }
-    },
-  }
+	name: 'HomePage',
+	data() {
+		return {
+			isLogin: false,
+			auth: '',
+		};
+	},
+	mounted() {
+		this.auth = getAuth();
+		onAuthStateChanged(this.auth, user => {
+			if (user) {
+				this.isLogin = true;
+			} else {
+				this.isLogin = false;
+			}
+		});
+	},
+	methods: {
+		logOut() {
+			signOut(this.auth).then(() => {
+				this.$router.push('/');
+			});
+		},
+	},
+};
 </script>
 
 <style lang="scss">
