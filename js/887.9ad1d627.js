@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkwest_test"]=self["webpackChunkwest_test"]||[]).push([[887],{7887:(e,s,t)=>{t.r(s),t.d(s,{default:()=>b});var r=t(6252),a=t(8389),c={class:"home"},l=(0,r._)("h1",{class:"title"},"Welcome to APP!",-1),n=(0,r._)("img",{src:a,alt:"img"},null,-1),u=[l,n];function i(e,s){return(0,r.wg)(),(0,r.iD)("div",c,u)}var o=t(3744);const d={},g=(0,o.Z)(d,[["render",i]]),b=g},8389:(e,s,t)=>{e.exports=t.p+"img/background.ab5d8bf8.svg"}}]);
+//# sourceMappingURL=887.9ad1d627.js.map
