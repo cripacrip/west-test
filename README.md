@@ -1,5 +1,7 @@
 # west-test
 
+view link:  https://cripacrip.github.io/west-test/
+
 ## Project setup
 ```
 npm install
